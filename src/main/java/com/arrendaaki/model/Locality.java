@@ -1,12 +1,17 @@
 package com.arrendaaki.model;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Locality implements Serializable {
@@ -21,8 +26,12 @@ public class Locality implements Serializable {
 	@Column(nullable = false)
 	private String designation;
 	
-	@Column(name = "fk_locality")
-	private long fkLocality;
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(
+		name = "fk_locality",
+		foreignKey = @ForeignKey(name = "fk_locality_fkey")
+	)
+	private List<Locality> places;
 	
 	public Locality() {
 	}
@@ -39,10 +48,12 @@ public class Locality implements Serializable {
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
-	public long getFkLocality() {
-		return fkLocality;
+
+	public List<Locality> getPlaces() {
+		return places;
 	}
-	public void setFkLocality(long fkLocality) {
-		this.fkLocality = fkLocality;
+
+	public void setPlaces(List<Locality> places) {
+		this.places = places;
 	}
 }
