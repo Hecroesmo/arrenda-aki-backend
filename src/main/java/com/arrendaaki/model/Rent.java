@@ -33,13 +33,13 @@ public class Rent implements Serializable {
 		name = "fk_person",
 		foreignKey = @ForeignKey(name = "fk_person_fkey")
 	)
-	private Person tenant;
+	private Person tenant;	//	Inquilino
 	
 	@Column(name = "lease_date")
-	private String leaseDate;
+	private String leaseDate;	//	data de arrendamento
 	
 	@Column(name = "departure_date")
-	private String departureDate;
+	private String departureDate;	// data do término da renda
 
 	public Rent() {
 		super();

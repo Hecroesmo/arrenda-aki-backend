@@ -36,6 +36,9 @@ public class Person implements Serializable {
 	
 	@OneToOne(optional = false)
 	private Account account;
+	
+	@OneToOne
+	private Locality locality;
 		
 	public Person() {
 	}
@@ -75,5 +78,17 @@ public class Person implements Serializable {
 	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
 	}
+	public Account getAccount() {
+		return account;
+	}
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+	public Locality getLocality() {
+		return locality;
+	}
+	public void setLocality(Locality locality) {
+		this.locality = locality;
+	}	
 	
 }

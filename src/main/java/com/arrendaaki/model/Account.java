@@ -55,4 +55,12 @@ public class Account implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public AccountType getAccountType() {
+		return accountType;
+	}
+
+	public void setAccountType(AccountType accountType) {
+		this.accountType = accountType;
+	}
 }

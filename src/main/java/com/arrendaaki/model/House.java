@@ -33,7 +33,7 @@ public class House implements Serializable {
 	
 	@OneToOne(optional = false)
 	@JoinColumn(name = "fk_person")
-	private Person lessor;
+	private Person lessor; // arrendador, proprietário
 
 	public long getPkHouse() {
 		return pkHouse;

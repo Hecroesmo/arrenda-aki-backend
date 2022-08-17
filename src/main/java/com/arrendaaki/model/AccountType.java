@@ -19,7 +19,7 @@ public class AccountType implements Serializable {
 	private long id;
 	
 	@Column(nullable = false)
-	private String desination;
+	private String designation;
 	
 	public AccountType() {
 		super();
@@ -33,11 +33,11 @@ public class AccountType implements Serializable {
 		this.id = id;
 	}
 
-	public String getDesination() {
-		return desination;
+	public String getDesignation() {
+		return designation;
 	}
 
-	public void setDesination(String desination) {
-		this.desination = desination;
+	public void setDesignation(String designation) {
+		this.designation = designation;
 	}
 }
